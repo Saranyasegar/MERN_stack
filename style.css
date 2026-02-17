@@ -1,212 +1,164 @@
-/* Google Font - Modern Tech */
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap');
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-:root {
-    --bg-primary: #0f172a;
-    --bg-secondary: #0d1103;
-    --accent: #00f0ff;
-    --accent-soft: rgba(0, 240, 255, 0.2);
-    --text-main: #c4fd3f;
-    --text-muted: #fde03a;
-}
-
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Rajdhani', sans-serif;
-}
-
-/* Body */
 body {
-    background: linear-gradient(135deg, #061601, #192501f3);
-    color: var(--text-main);
-    padding: 25px;
-    line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: #ffffff;
 }
 
-/* Futuristic Card Layout */
-section, header, nav, footer {
-    background: var(--bg-secondary);
-    border: 1px solid var(--accent-soft);
-    border-radius: 14px;
-    padding: 25px;
-    margin-bottom: 25px;
-    box-shadow: 0 0 20px rgba(1, 14, 14, 0.185);
-    transition: 0.4s ease;
-}
-
-section:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 0 30px rgba(0, 240, 255, 0.2);
+/* Neon Glow Utility */
+.neon-text {
+    color: #0ff;
+    text-shadow:
+        0 0 5px #0ff,
+        0 0 10px #0ff,
+        0 0 20px #0ff,
+        0 0 40px #00f7ff;
 }
 
 /* Header */
+header {
+    background: linear-gradient(90deg, #ff00cc, #3333ff);
+    box-shadow: 0 0 20px #ff00cc;
+}
+
 header h1 {
-    font-size: 2.8rem;
+    font-weight: 600;
     letter-spacing: 2px;
-    color: var(--accent);
 }
 
-header p {
-    margin-top: 10px;
-    color: var(--text-muted);
+
+/* Navbar base */
+.navbar {
+    background: rgba(0, 0, 0, 0.85) !important;
+    backdrop-filter: blur(12px);
+    border-bottom: 2px solid #0ff;
+    animation: neonBorder 3s infinite alternate;
 }
 
-/* Navigation */
-nav ul {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
+/* Brand glow */
+.navbar-brand {
+    color: #0ff !important;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px #0ff;
+    transition: 0.3s;
 }
 
-nav a {
-    text-decoration: none;
-    color: var(--accent);
-    padding: 8px 18px;
-    border: 1px solid var(--accent);
-    border-radius: 30px;
-    transition: 0.3s ease;
+.navbar-brand:hover {
+    text-shadow: 0 0 15px #ff00cc, 0 0 25px #ff00cc;
 }
 
-nav a:hover {
-    background: var(--accent);
-    color: #000;
-    box-shadow: 0 0 15px var(--accent);
+.nav-link {
+    color: #0ff !important;
+    transition: 0.3s;
 }
 
-/* Headings */
-h2 {
-    margin-bottom: 15px;
-    color: var(--accent);
-    position: relative;
+.nav-link:hover {
+    text-shadow: 0 0 10px #0ff;
 }
 
-h2::after {
+.nav-link::after {
     content: "";
-    display: block;
-    width: 60px;
-    height: 3px;
-    background: var(--accent);
-    margin-top: 5px;
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -4px;
+    background: linear-gradient(90deg, #00f7ff, #ff00cc);
+    box-shadow: 0 0 8px #0ff;
+    transition: width 0.4s ease;
 }
 
-/* Lists */
-ul li, ol li {
-    margin: 8px 0;
-    color: var(--text-muted);
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+} 
+
+/* Mobile menu glow */
+.navbar-toggler {
+    border: 1px solid #0ff;
+    box-shadow: 0 0 10px #0ff;
+}
+/* Cards */
+.card {
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid #0ff;
+    box-shadow: 0 0 15px #0ff;
+    border-radius: 15px;
+}
+
+/* Section Titles */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #0ff;
+    text-shadow: 0 0 10px #0ff;
 }
 
 /* Progress Bars */
-progress {
-    width: 100%;
-    height: 16px;
+.progress {
+    background-color: #111;
     border-radius: 20px;
     overflow: hidden;
 }
 
-progress::-webkit-progress-bar {
-    background: #1f2937;
-}
-
-progress::-webkit-progress-value {
-    background: linear-gradient(90deg, #00f0ff, #0088ff);
-    border-radius: 20px;
+.progress-bar {
+    background: linear-gradient(90deg, #00f7ff, #ff00cc);
+    box-shadow: 0 0 10px #00f7ff;
 }
 
 /* Table */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 15px;
+.table {
+    color: #fff;
 }
 
-table th {
-    background: var(--accent);
-    color: #000;
-    padding: 10px;
+.table thead {
+    background: linear-gradient(90deg, #ff00cc, #00f7ff);
 }
 
-table td {
-    padding: 10px;
-    border-bottom: 1px solid var(--accent-soft);
-}
-
-table tr:hover {
-    background: rgba(0, 240, 255, 0.05);
-}
-
-/* Image */
-img {
-    width: 220px;          /* Control portrait width */
-    height: 300px;         /* Portrait height */
-    object-fit: cover;     /* Prevent image distortion */
-    border-radius: 12px;   /* Slight rounded corners */
-    border: 3px solid var(--accent);
-    transition: 0.4s ease;
-    align-content: center;
-}
-
-img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px var(--accent);
-}
-
-/* Video */
-video {
-    border-radius: 12px;
-    border: 1px solid var(--accent-soft);
-    box-shadow: 0 0 20px rgba(0, 240, 255, 0.15);
+/* Media */
+img, video {
+    border: 2px solid #0ff;
+    box-shadow: 0 0 20px #0ff;
+    border-radius: 10px;
 }
 
 /* Form */
-form input, form select {
-    width: 100%;
-    padding: 10px;
-    margin-top: 6px;
-    background: #1f2937;
-    border: 1px solid var(--accent-soft);
-    border-radius: 8px;
-    color: var(--text-main);
+form {
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid #ff00cc;
+    box-shadow: 0 0 20px #ff00cc;
+    border-radius: 15px;
+}
+
+.form-control, .form-select {
+    background: #111;
+    border: 1px solid #0ff;
+    color: #fff;
+}
+
+.form-control:focus, .form-select:focus {
+    box-shadow: 0 0 10px #0ff;
+    border-color: #0ff;
+}
+
+/* Button */
+.btn-primary {
+    background: linear-gradient(90deg, #00f7ff, #ff00cc);
+    border: none;
+    box-shadow: 0 0 10px #ff00cc;
     transition: 0.3s;
 }
 
-form input:focus, form select:focus {
-    outline: none;
-    border-color: var(--accent);
-    box-shadow: 0 0 10px var(--accent-soft);
-}
-
-form input[type="radio"],
-form input[type="checkbox"] {
-    width: auto;
-    margin-right: 5px;
-}
-
-input[type="submit"] {
-    background: var(--accent);
-    color: #000;
-    font-weight: bold;
-    cursor: pointer;
-    border: none;
-    transition: 0.3s ease;
-}
-
-input[type="submit"]:hover {
-    box-shadow: 0 0 20px var(--accent);
+.btn-primary:hover {
     transform: scale(1.05);
+    box-shadow: 0 0 20px #00f7ff;
 }
 
 /* Footer */
 footer {
-    text-align: center;
-    font-size: 0.9rem;
-    color: var(--text-muted);
-}
-
-/* Smooth Scroll */
-html {
-    scroll-behavior: smooth;
+    background: #000;
+    box-shadow: 0 0 15px #0ff inset;
 }
