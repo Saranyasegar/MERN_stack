@@ -1,0 +1,229 @@
+{
+"shows": [
+    {
+    "id": 1,
+    "title": "Stranger Things",
+    "genre": ["Science Fiction", "Horror", "Drama"],
+    "release_year": 2016,
+    "seasons": 4,
+    "rating": 8.7,
+    "language": "English"
+    },
+    {
+    "id": 2,
+    "title": "Money Heist",
+    "genre": ["Crime", "Thriller", "Drama"],
+    "release_year": 2017,
+    "seasons": 5,
+    "rating": 8.2,
+    "language": "Spanish"
+    },
+    {
+    "id": 3,
+    "title": "Wednesday",
+    "genre": ["Fantasy", "Mystery", "Comedy"],
+    "release_year": 2022,
+    "seasons": 1,
+    "rating": 8.1,
+    "language": "English"
+    },
+    {
+    "id": 4,
+    "title": "The Witcher",
+    "genre": ["Fantasy", "Adventure", "Drama"],
+    "release_year": 2019,
+    "seasons": 3,
+    "rating": 8.0,
+    "language": "English"
+    },
+    {
+    "id": 5,
+    "title": "Squid Game",
+    "genre": ["Thriller", "Drama", "Survival"],
+    "release_year": 2021,
+    "seasons": 1,
+    "rating": 8.0,
+    "language": "Korean"
+    },
+    {
+    "id": 6,
+    "title": "Dark",
+    "genre": ["Science Fiction", "Mystery", "Thriller"],
+    "release_year": 2017,
+    "seasons": 3,
+    "rating": 8.8,
+    "language": "German"
+    },
+    {
+    "id": 7,
+    "title": "The Crown",
+    "genre": ["Historical", "Drama"],
+    "release_year": 2016,
+    "seasons": 6,
+    "rating": 8.6,
+    "language": "English"
+    },
+    {
+    "id": 8,
+    "title": "Bridgerton",
+    "genre": ["Romance", "Drama"],
+    "release_year": 2020,
+    "seasons": 3,
+    "rating": 7.4,
+    "language": "English"
+    },
+    {
+    "id": 9,
+    "title": "Narcos",
+    "genre": ["Crime", "Biography", "Drama"],
+    "release_year": 2015,
+    "seasons": 3,
+    "rating": 8.8,
+    "language": "English/Spanish"
+    },
+    {
+    "id": 10,
+    "title": "Narcos: Mexico",
+    "genre": ["Crime", "Drama"],
+    "release_year": 2018,
+    "seasons": 3,
+    "rating": 8.4,
+    "language": "Spanish"
+    },
+    {
+    "id": 11,
+    "title": "Lucifer",
+    "genre": ["Fantasy", "Crime", "Drama"],
+    "release_year": 2016,
+    "seasons": 6,
+    "rating": 8.1,
+    "language": "English"
+    },
+    {
+    "id": 12,
+    "title": "Ozark",
+    "genre": ["Crime", "Drama", "Thriller"],
+    "release_year": 2017,
+    "seasons": 4,
+    "rating": 8.5,
+    "language": "English"
+    },
+    {
+    "id": 13,
+    "title": "Black Mirror",
+    "genre": ["Science Fiction", "Drama", "Thriller"],
+    "release_year": 2011,
+    "seasons": 6,
+    "rating": 8.7,
+    "language": "English"
+    },
+    {
+    "id": 14,
+    "title": "You",
+    "genre": ["Psychological", "Thriller", "Drama"],
+    "release_year": 2018,
+    "seasons": 4,
+    "rating": 7.7,
+    "language": "English"
+    },
+    {
+    "id": 15,
+    "title": "Sex Education",
+    "genre": ["Comedy", "Drama"],
+    "release_year": 2019,
+    "seasons": 4,
+    "rating": 8.3,
+    "language": "English"
+    },
+    {
+    "id": 16,
+    "title": "Elite",
+    "genre": ["Teen", "Drama", "Thriller"],
+    "release_year": 2018,
+    "seasons": 7,
+    "rating": 7.3,
+    "language": "Spanish"
+    },
+    {
+    "id": 17,
+    "title": "The Umbrella Academy",
+    "genre": ["Superhero", "Action", "Drama"],
+    "release_year": 2019,
+    "seasons": 3,
+    "rating": 7.9,
+    "language": "English"
+    },
+    {
+    "id": 18,
+    "title": "Cobra Kai",
+    "genre": ["Action", "Comedy", "Drama"],
+    "release_year": 2018,
+    "seasons": 5,
+    "rating": 8.5,
+    "language": "English"
+    },
+    {
+    "id": 19,
+    "title": "Manifest",
+    "genre": ["Mystery", "Drama", "Science Fiction"],
+    "release_year": 2018,
+    "seasons": 4,
+    "rating": 7.1,
+    "language": "English"
+    },
+    {
+    "id": 20,
+    "title": "The Sandman",
+    "genre": ["Fantasy", "Drama"],
+    "release_year": 2022,
+    "seasons": 1,
+    "rating": 7.7,
+    "language": "English"
+    },
+    {
+    "id": 21,
+    "title": "All of Us Are Dead",
+    "genre": ["Horror", "Drama", "Thriller"],
+    "release_year": 2022,
+    "seasons": 1,
+    "rating": 7.5,
+    "language": "Korean"
+    },
+    {
+    "id": 22,
+    "title": "Alice in Borderland",
+    "genre": ["Science Fiction", "Thriller", "Action"],
+    "release_year": 2020,
+    "seasons": 2,
+    "rating": 7.8,
+    "language": "Japanese"
+    },
+    {
+    "id": 23,
+    "title": "Kingdom",
+    "genre": ["Historical", "Horror", "Thriller"],
+    "release_year": 2019,
+    "seasons": 2,
+    "rating": 8.3,
+    "language": "Korean"
+    },
+    {
+    "id": 24,
+    "title": "Sweet Tooth",
+    "genre": ["Fantasy", "Adventure", "Drama"],
+    "release_year": 2021,
+    "seasons": 2,
+    "rating": 7.8,
+    "language": "English"
+    },
+    {
+    "id": 25,
+    "title": "The Night Agent",
+    "genre": ["Action", "Thriller", "Drama"],
+    "release_year": 2023,
+    "seasons": 1,
+    "rating": 7.5,
+    "language": "English"
+    }
+]
+}
