@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Shows Directory</title>
+    <style>
+        /* CSS Styles */
+        :root {
+            --bg-color: #141414;
+            --card-bg: #2b2b2b;
+            --text-main: #ffffff;
+            --text-muted: #b3b3b3;
+            --accent: #e50914; /* Streaming red */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px 0;
+            border-bottom: 1px solid #333;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Grid Layout */
+        .shows-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Card Styles */
+        .show-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .show-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.5);
+        }
+
+        .show-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .show-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .show-rating {
+            background-color: #f5c518; /* IMDB yellow */
+            color: #000;
+            font-weight: bold;
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .show-meta {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            display: flex;
+            gap: 15px;
+        }
+
+        /* Genre Tags */
+        .genres {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: auto; /* Pushes to the bottom */
+        }
+
+        .genre-tag {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Show Directory</h1>
+    </header>
+
+    <main>
+        <div class="shows-grid" id="shows-container">
+            </div>
+    </main>
+
+    <script>
+        // JavaScript Data and Logic
+        const dataset = {
+            "shows": [
+                { "id": 1, "title": "Stranger Things", "genre": ["Science Fiction", "Horror", "Drama"], "release_year": 2016, "seasons": 4, "rating": 8.7, "language": "English" },
+                { "id": 2, "title": "Money Heist", "genre": ["Crime", "Thriller", "Drama"], "release_year": 2017, "seasons": 5, "rating": 8.2, "language": "Spanish" },
+                { "id": 3, "title": "Wednesday", "genre": ["Fantasy", "Mystery", "Comedy"], "release_year": 2022, "seasons": 1, "rating": 8.1, "language": "English" },
+                { "id": 4, "title": "The Witcher", "genre": ["Fantasy", "Adventure", "Drama"], "release_year": 2019, "seasons": 3, "rating": 8.0, "language": "English" },
+                { "id": 5, "title": "Squid Game", "genre": ["Thriller", "Drama", "Survival"], "release_year": 2021, "seasons": 1, "rating": 8.0, "language": "Korean" },
+                { "id": 6, "title": "Dark", "genre": ["Science Fiction", "Mystery", "Thriller"], "release_year": 2017, "seasons": 3, "rating": 8.8, "language": "German" },
+                { "id": 7, "title": "The Crown", "genre": ["Historical", "Drama"], "release_year": 2016, "seasons": 6, "rating": 8.6, "language": "English" },
+                { "id": 8, "title": "Bridgerton", "genre": ["Romance", "Drama"], "release_year": 2020, "seasons": 3, "rating": 7.4, "language": "English" },
+                { "id": 9, "title": "Narcos", "genre": ["Crime", "Biography", "Drama"], "release_year": 2015, "seasons": 3, "rating": 8.8, "language": "English/Spanish" },
+                { "id": 10, "title": "Narcos: Mexico", "genre": ["Crime", "Drama"], "release_year": 2018, "seasons": 3, "rating": 8.4, "language": "Spanish" },
+                { "id": 11, "title": "Lucifer", "genre": ["Fantasy", "Crime", "Drama"], "release_year": 2016, "seasons": 6, "rating": 8.1, "language": "English" },
+                { "id": 12, "title": "Ozark", "genre": ["Crime", "Drama", "Thriller"], "release_year": 2017, "seasons": 4, "rating": 8.5, "language": "English" },
+                { "id": 13, "title": "Black Mirror", "genre": ["Science Fiction", "Drama", "Thriller"], "release_year": 2011, "seasons": 6, "rating": 8.7, "language": "English" },
+                { "id": 14, "title": "You", "genre": ["Psychological", "Thriller", "Drama"], "release_year": 2018, "seasons": 4, "rating": 7.7, "language": "English" },
+                { "id": 15, "title": "Sex Education", "genre": ["Comedy", "Drama"], "release_year": 2019, "seasons": 4, "rating": 8.3, "language": "English" },
+                { "id": 16, "title": "Elite", "genre": ["Teen", "Drama", "Thriller"], "release_year": 2018, "seasons": 7, "rating": 7.3, "language": "Spanish" },
+                { "id": 17, "title": "The Umbrella Academy", "genre": ["Superhero", "Action", "Drama"], "release_year": 2019, "seasons": 3, "rating": 7.9, "language": "English" },
+                { "id": 18, "title": "Cobra Kai", "genre": ["Action", "Comedy", "Drama"], "release_year": 2018, "seasons": 5, "rating": 8.5, "language": "English" },
+                { "id": 19, "title": "Manifest", "genre": ["Mystery", "Drama", "Science Fiction"], "release_year": 2018, "seasons": 4, "rating": 7.1, "language": "English" },
+                { "id": 20, "title": "The Sandman", "genre": ["Fantasy", "Drama"], "release_year": 2022, "seasons": 1, "rating": 7.7, "language": "English" },
+                { "id": 21, "title": "All of Us Are Dead", "genre": ["Horror", "Drama", "Thriller"], "release_year": 2022, "seasons": 1, "rating": 7.5, "language": "Korean" },
+                { "id": 22, "title": "Alice in Borderland", "genre": ["Science Fiction", "Thriller", "Action"], "release_year": 2020, "seasons": 2, "rating": 7.8, "language": "Japanese" },
+                { "id": 23, "title": "Kingdom", "genre": ["Historical", "Horror", "Thriller"], "release_year": 2019, "seasons": 2, "rating": 8.3, "language": "Korean" },
+                { "id": 24, "title": "Sweet Tooth", "genre": ["Fantasy", "Adventure", "Drama"], "release_year": 2021, "seasons": 2, "rating": 7.8, "language": "English" },
+                { "id": 25, "title": "The Night Agent", "genre": ["Action", "Thriller", "Drama"], "release_year": 2023, "seasons": 1, "rating": 7.5, "language": "English" }
+            ]
+        };
+
+        const container = document.getElementById('shows-container');
+
+        // Function to render the shows
+        function renderShows(shows) {
+            shows.forEach(show => {
+                // Create card element
+                const card = document.createElement('div');
+                card.className = 'show-card';
+
+                // Map genres into HTML tags
+                const genreTags = show.genre.map(g => `<span class="genre-tag">${g}</span>`).join('');
+
+                // Populate card HTML
+                card.innerHTML = `
+                    <div class="show-header">
+                        <div class="show-title">${show.title}</div>
+                        <div class="show-rating">★ ${show.rating}</div>
+                    </div>
+                    <div class="show-meta">
+                        <span>🗓️ ${show.release_year}</span>
+                        <span>📺 ${show.seasons} Season${show.seasons > 1 ? 's' : ''}</span>
+                        <span>🌍 ${show.language}</span>
+                    </div>
+                    <div class="genres">
+                        ${genreTags}
+                    </div>
+                `;
+
+                // Add to container
+                container.appendChild(card);
+            });
+        }
+
+        // Initialize the app
+        renderShows(dataset.shows);
+    </script>
+</body>
+</html>

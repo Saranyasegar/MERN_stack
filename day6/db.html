@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kollywood Stars | Directory</title>
+    <style>
+        /* Netflix & Social Media Inspired Styles */
+        :root {
+            --bg-dark: #0f0f0f;
+            --card-bg: #1a1a1a;
+            --accent-red: #E50914;
+            --text-gold: #dbb065;
+            --verified-blue: #1DA1F2;
+            --text-white: #ffffff;
+            --text-gray: #a0a0a0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-white);
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: var(--accent-red);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            color: var(--text-gray);
+            margin-top: 10px;
+        }
+
+        /* Responsive Grid */
+        .celebrity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        /* Card Design */
+        .celeb-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #333;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .celeb-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-red);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+        }
+
+        .card-content {
+            padding: 24px;
+        }
+
+        /* Header within Card */
+        .celeb-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .celeb-name {
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+
+        .verified-badge {
+            color: var(--verified-blue);
+            font-size: 1.2rem;
+        }
+
+        .username {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            display: block;
+            margin-top: -5px;
+        }
+
+        /* Stats Section */
+        .stats-row {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+            padding: 15px 0;
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+        }
+
+        .stat-item {
+            text-align: left;
+        }
+
+        .stat-value {
+            display: block;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--text-gold);
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-gray);
+            text-transform: uppercase;
+        }
+
+        /* Lists */
+        .info-section {
+            margin-bottom: 15px;
+        }
+
+        .info-label {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .movie-list, .award-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            border: 1px solid #444;
+        }
+
+        .award-tag {
+            background: rgba(219, 176, 101, 0.1);
+            border-color: var(--text-gold);
+            color: var(--text-gold);
+        }
+
+        /* Custom Industry Badge */
+        .industry-badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--accent-red);
+            padding: 4px 12px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            border-bottom-left-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Star Directory</h1>
+        <p>Featured Personalities & Industry Icons</p>
+    </header>
+
+    <main class="celebrity-grid" id="celeb-container">
+        </main>
+
+    <script>
+        const celebData = {
+            "celebrities": [
+                {
+                    "id": 1,
+                    "name": "Rajinikanth",
+                    "username": "superstar",
+                    "profession": "Actor",
+                    "dateOfBirth": "1950-12-12",
+                    "placeOfBirth": "Bengaluru, India",
+                    "industry": "Kollywood",
+                    "yearsActive": 1975,
+                    "famousMovies": ["Baasha", "Sivaji", "Enthiran", "Jailer"],
+                    "awards": ["Padma Bhushan", "Padma Vibhushan", "Dadasaheb Phalke"],
+                    "followersInMillions": 12.5,
+                    "verified": true
+                },
+                {
+                    "id": 2,
+                    "name": "Vijay",
+                    "username": "thalapathy",
+                    "profession": "Actor",
+                    "dateOfBirth": "1974-06-22",
+                    "placeOfBirth": "Chennai, India",
+                    "industry": "Kollywood",
+                    "yearsActive": 1992,
+                    "famousMovies": ["Ghilli", "Thuppakki", "Mersal", "Leo"],
+                    "awards": ["State Film Award", "SIIMA Award"],
+                    "followersInMillions": 18.2,
+                    "verified": true
+                },
+                {
+                    "id": 3,
+                    "name": "Ajith Kumar",
+                    "username": "thala",
+                    "profession": "Actor",
+                    "dateOfBirth": "1971-05-01",
+                    "placeOfBirth": "Hyderabad, India",
+                    "industry": "Kollywood",
+                    "yearsActive": 1990,
+                    "famousMovies": ["Vaali", "Mankatha", "Viswasam", "Thunivu"],
+                    "awards": ["Filmfare South", "Cinema Express"],
+                    "followersInMillions": 10.7,
+                    "verified": true
+                },
+                {
+                    "id": 4,
+                    "name": "Nayanthara",
+                    "username": "lady_superstar",
+                    "profession": "Actress",
+                    "dateOfBirth": "1984-11-18",
+                    "placeOfBirth": "Bengaluru, India",
+                    "industry": "Kollywood",
+                    "yearsActive": 2003,
+                    "famousMovies": ["Aramm", "Raja Rani", "Bigil", "Netrikann"],
+                    "awards": ["Filmfare South", "SIIMA Award"],
+                    "followersInMillions": 9.3,
+                    "verified": true
+                },
+                {
+                    "id": 5,
+                    "name": "Sivakarthikeyan",
+                    "username": "sk",
+                    "profession": "Actor",
+                    "dateOfBirth": "1985-02-17",
+                    "placeOfBirth": "Singampunari, India",
+                    "industry": "Kollywood",
+                    "yearsActive": 2012,
+                    "famousMovies": ["Doctor", "Don", "Remo", "Ayalaan"],
+                    "awards": ["Vijay Award", "Edison Award"],
+                    "followersInMillions": 7.8,
+                    "verified": true
+                },
+                {
+                    "id": "1f25",
+                    "name": "Hari",
+                    "username": "hari_prime",
+                    "profession": "Summa",
+                    "industry": "Independent",
+                    "yearsActive": 2024,
+                    "famousMovies": ["Logic Pro", "The Debugger"],
+                    "awards": ["Clean Code Award"],
+                    "followersInMillions": 100,
+                    "verified": false
+                }
+            ]
+        };
+
+        const container = document.getElementById('celeb-container');
+
+        function init() {
+            celebData.celebrities.forEach(celeb => {
+                const card = document.createElement('div');
+                card.className = 'celeb-card';
+
+                // Handle conditional industry badge
+                const industry = celeb.industry || "Global";
+                
+                // Process Arrays into HTML
+                const movieTags = (celeb.famousMovies || []).map(m => `<span class="tag">${m}</span>`).join('');
+                const awardTags = (celeb.awards || []).map(a => `<span class="tag award-tag">${a}</span>`).join('');
+
+                card.innerHTML = `
+                    <div class="industry-badge">${industry}</div>
+                    <div class="card-content">
+                        <div class="celeb-header">
+                            <div>
+                                <span class="celeb-name">${celeb.name}</span>
+                                <span class="username">@${celeb.username || 'n/a'}</span>
+                            </div>
+                            ${celeb.verified ? '<span class="verified-badge">●</span>' : ''}
+                        </div>
+
+                        <div class="stats-row">
+                            <div class="stat-item">
+                                <span class="stat-value">${celeb.followersInMillions}M</span>
+                                <span class="stat-label">Followers</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">${celeb.yearsActive}</span>
+                                <span class="stat-label">Started</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">${celeb.profession}</span>
+                                <span class="stat-label">Role</span>
+                            </div>
+                        </div>
+
+                        <div class="info-section">
+                            <span class="info-label">Notable Works</span>
+                            <div class="movie-list">${movieTags || '<span class="text-gray">None</span>'}</div>
+                        </div>
+
+                        <div class="info-section">
+                            <span class="info-label">Major Awards</span>
+                            <div class="award-list">${awardTags || '<span class="text-gray">None</span>'}</div>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        init();
+    </script>
+</body>
+</html>

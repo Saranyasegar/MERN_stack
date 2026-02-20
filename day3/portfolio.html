@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Saranya.S| Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<header>
+    <h1>Saranya.S</h1>
+    <p>
+        Hello! My name is <b>Saranya.S</b>. I am a passionate <i>web development student</i> who loves 
+        learning new technologies. I believe in <u>continuous improvement</u> and hard work. 
+        Sometimes I make <s>mistakes</s> but I always learn from them. 
+        I enjoy solving problems like 2<sup>3</sup> = 8 and writing chemical formulas such as H<sub>2</sub>O. 
+        My favorite HTML tag is <code>&lt;section&gt;</code>.
+    </p>
+</header>
+
+<nav>
+    <h2>Navigation</h2>
+    <ul>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#academics">Academic Records</a></li>
+        <li><a href="#media">Media</a></li>
+        <li><a href="#contact">Contact Me</a></li>
+    </ul>
+</nav>
+
+<section id="about">
+    <h2>About Me</h2>
+
+    <article>
+        <h3>My Goal</h3>
+        <p>
+            My goal is to become a professional software developer and contribute to meaningful projects.
+            I enjoy teamwork, leadership, and creativity.
+        </p>
+    </article>
+
+    <details>
+        <summary>Click to read more about me</summary>
+        <p>
+            I started learning HTML in 2024 and since then I have built several small projects.
+            I also enjoy reading technology blogs and watching programming tutorials.
+        </p>
+    </details>
+
+    <h3>Hobbies (Unordered List)</h3>
+    <ul>
+        <li>Reading</li>
+        <li>Sports</li>
+        <li>Coding</li>
+    </ul>
+
+    <h3>Daily Activities (Ordered List)</h3>
+    <ol>
+        <li>Practice Coding</li>
+        <li>Attend Classes</li>
+        <li>Exercise</li>
+        <li>Work on Projects</li>
+    </ol>
+
+</section>
+
+<section id="skills">
+    <h2>My Skills</h2>
+
+    <p>HTML:</p>
+    <progress value="50" max="100">90%</progress>
+
+    <p>Python:</p>
+    <progress value="70" max="100">80%</progress>
+
+    <p>Java:</p>
+    <progress value="60" max="100">70%</progress>
+
+</section>
+
+<section id="academics">
+    <h2>Academic Records</h2>
+
+    <table border="1">
+        <caption>Semester Examination Results</caption>
+        <tr>
+            <th>Subject</th>
+            <th>Marks</th>
+            <th>Grade</th>
+        </tr>
+        <tr>
+            <td>Mathematics</td>
+            <td>75</td>
+            <td>B+</td>
+        </tr>
+        <tr>
+            <td>Computer Science</td>
+            <td>92</td>
+            <td>A+</td>
+        </tr>
+        <tr>
+            <td>English</td>
+            <td>85</td>
+            <td>A</td>
+        </tr>
+        <tr>
+            <td>Physics</td>
+            <td>88</td>
+            <td>A</td>
+        </tr>
+    </table>
+
+</section>
+
+<section id="media">
+    <h2>Media</h2>
+
+    <figure>
+        <img src="image.webp" alt="Profile photo" width="200">
+        <figcaption>My Profile Picture</figcaption>
+    </figure>
+
+    <figure>
+        <video width="320" height="240" controls>
+            <source src="intro.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <figcaption>Introduction Video</figcaption>
+    </figure>
+
+</section>
+
+<section id="contact">
+    <h2>Contact Me</h2>
+
+    <form>
+        <p>
+            <label for="fullname">Full Name:</label><br>
+            <input type="text" id="fullname" name="fullname">
+        </p>
+
+        <p>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email">
+        </p>
+
+        <p>Gender:</p>
+        <label for="male">
+            <input type="radio" id="male" name="gender" value="male"> Male
+        </label>
+        <label for="female">
+            <input type="radio" id="female" name="gender" value="female"> Female
+        </label>
+
+        <p>Interests:</p>
+        <label for="coding">
+            <input type="checkbox" id="coding" name="interest" value="coding"> Coding
+        </label>
+        <label for="sports">
+            <input type="checkbox" id="sports" name="interest" value="sports"> Sports
+        </label>
+        <label for="projects">
+            <input type="checkbox" id="projects" name="interest" value="projects"> Projects
+        </label>
+
+        <p>
+            <label for="country">Select Country:</label><br>
+            <select id="country" name="country">
+                <option value="india">India</option>
+                <option value="usa">USA</option>
+                <option value="uk">UK</option>
+            </select>
+        </p>
+
+        <p>
+            <input type="submit" value="Submit">
+        </p>
+    </form>
+
+</section>
+
+<footer>
+    <p>&copy; 2026 Saranya. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
