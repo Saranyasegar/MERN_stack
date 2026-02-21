@@ -1,0 +1,92 @@
+/* src/components/Projects.module.css */
+
+.projectsSection {
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  color: var(--neon-cyan);
+  text-shadow: 0 0 10px rgba(0, 247, 255, 0.6);
+  margin-bottom: 50px;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.grid {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(15, 15, 25, 0.8), rgba(5, 5, 8, 0.9));
+  border: 1px solid rgba(0, 247, 255, 0.3);
+  position: relative;
+  padding: 30px;
+  width: 320px;
+  text-align: left;
+  box-shadow: 0 0 15px rgba(0, 247, 255, 0.05);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--neon-cyan);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 25px rgba(0, 247, 255, 0.2), inset 0 0 10px rgba(0, 247, 255, 0.1);
+}
+
+.card:hover::before {
+  transform: scaleX(1);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(0, 247, 255, 0.2);
+  padding-bottom: 10px;
+}
+
+.card h3 {
+  color: #fff;
+  font-size: 1.2rem;
+  margin: 0;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.statusInfo {
+  font-family: 'Share Tech Mono', monospace;
+  color: var(--neon-magenta);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.cardDesc {
+  color: #a0b0c0;
+  margin-bottom: 25px;
+  min-height: 48px;
+  line-height: 1.5;
+  font-family: 'Share Tech Mono', monospace;
+}

@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Share+Tech+Mono&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --neon-cyan: #00f7ff;
+  --neon-magenta: #ff00ff;
+  --neon-green: #00ff66;
+  --dark-bg: #090a0f;
+  --darker-bg: #050508;
+  --panel-bg: rgba(15, 15, 25, 0.7);
+  --border-glow: 0 0 10px rgba(0, 247, 255, 0.5);
+
+  font-family: 'Share Tech Mono', monospace;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: #c2faff;
+  background-color: var(--dark-bg);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 0;
+}
+
+button {
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+/* Custom Neon Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--darker-bg);
+  border-left: 1px solid rgba(0, 247, 255, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--neon-cyan);
+  border-radius: 4px;
+  box-shadow: 0 0 10px var(--neon-cyan);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-magenta);
+  box-shadow: 0 0 15px var(--neon-magenta);
+}
+
+/* Selection color */
+::selection {
+  background: rgba(0, 247, 255, 0.4);
+  color: #ffffff;
+  text-shadow: 0 0 8px #ffffff;
+}
